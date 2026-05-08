@@ -1,0 +1,14 @@
+Problem-Code/
+├── .env                 <-- Ignored by Git (contains keys)
+├── .gitignore           <-- Added (to protect keys)
+├── README.md            <-- Documentation
+├── Structure.Js         <-- Project metadata
+├── backend/
+│   ├── main.py          <-- FastAPI & AI Logic
+│   ├── build_manager.py <-- Android Pipeline
+│   ├── requirements.txt <-- Python Libraries
+│   └── templates/       <-- Android Project Template
+└── frontend/
+    ├── package.json     <-- React dependencies
+    └── src/
+        └── App.js       <-- UI & Editor Logic
