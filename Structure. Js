@@ -1,0 +1,15 @@
+problemcode/
+├── backend/
+│   ├── main.py                # FastAPI Application & AI Logic
+│   ├── build_manager.py       # Android APK Build Pipeline
+│   ├── requirements.txt       # Python Dependencies
+│   └── templates/
+│       └── android-webview/   # (Pre-existing Android Project Template)
+├── frontend/
+│   ├── src/
+│   │   ├── App.js             # Main UI Logic
+│   │   ├── index.js           # React Entry Point
+│   │   └── components/        # UI Fragments
+│   ├── package.json           # JS Dependencies
+│   └── public/
+└── .env                       # API Keys & Env Variables
