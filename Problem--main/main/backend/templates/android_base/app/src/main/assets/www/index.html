@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="theme-color" content="#0d1117"/>
+    <title>ProblemCode App</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #0d1117;
+            color: #e6edf3;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        #loading {
+            color: #58a6ff;
+            font-size: 14px;
+            padding: 10px 0;
+        }
+        #error-box {
+            display: none;
+            background: #2d1117;
+            border: 1px solid #f85149;
+            border-radius: 6px;
+            padding: 12px;
+            color: #f85149;
+            font-size: 13px;
+            white-space: pre-wrap;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">Loading app...</div>
+    <div id="error-box"></div>
+
+    <script>
+        window.onerror = function(msg, src, line, col, err) {
+            document.getElementById('loading').style.display = 'none';
+            var box = document.getElementById('error-box');
+            box.style.display = 'block';
+            box.textContent = 'Runtime Error:\n' + (err ? err.stack : msg);
+        };
+        window.addEventListener('unhandledrejection', function(e) {
+            document.getElementById('loading').style.display = 'none';
+            var box = document.getElementById('error-box');
+            box.style.display = 'block';
+            box.textContent = 'Unhandled Promise:\n' + (e.reason ? e.reason.toString() : 'Unknown');
+        });
+    </script>
+    <script>
+        document.getElementById('loading').style.display = 'none';
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
